@@ -1,25 +1,34 @@
-import React, { useState } from "react";
-import { Search as initialMovies } from "../../mock/cinema.json";
+import React, { useContext, useState } from "react";
+import { SearchContext } from "../../context/SearchContext";
+/* import { Search as initialMovies } from "../../mock/cinema.json"; */
 
-export const ProductsGridComponent = () => {
-  const [movies, setMovies] = useState(initialMovies);
+export const ProductsGridComponent = () =>  {
+  /*
+  const [movies, setMovies] = useState(initialMovies); */
 
-  const hasMovies = movies.length > 0;
+  const {search, setSearch, movies} = useContext(SearchContext);
+  const hasMovies = search?.movies.length > 0;
 
   return (
     <>
+      {
+        search.loading ? <p><strong>
+          Loading...
+          </strong></p> : null
+      }
+
       {hasMovies ? (
         <ul>
-          {movies.map((movie) => (
-            <li key={movie.imdbID}>
+          {search.movies.map((movie) => (
+            <li key={movie.id}>
               <picture>
-                <img src={movie.Poster} alt={movie.Title} />
+                <img src={movie.image} alt={movie.title} />
               </picture>
-              <h4>{movie.Title}</h4>
+              <h4>{movie.title}</h4>
 
-              <p>{movie.Type}</p>
+              <p>{movie.category}</p>
 
-              <p>{movie.Year}</p>
+              <p>{movie.year}</p>
 
               <button>Favorite</button>
             </li>
