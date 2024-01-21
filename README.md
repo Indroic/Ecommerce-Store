@@ -11,8 +11,8 @@ STEPS FOR THIS PROJECT:
 8.1 Create the enviroment variables. ✅
 9.- Show the elements in the grid component. ✅
 10.- Do the inputSearch work:
-10.1 - Make the inputSearch change the value when the use write.
-10.2 - Show messages if the search is not valid and show with red color.
+10.1 - Make the inputSearch change the value when the use write. ✅
+10.2 - Show messages if the search is not valid and show it with red color.
 10.
 10.2 - Add styles for the search and the title with sass.
 11.- Create the filters for the search.

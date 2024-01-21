@@ -34,9 +34,15 @@ export const LandingPage = () => {
     }
   }
 
+  useEffect(()=>{
+    setSearch(prevState => ({
+      ...prevState,
+      searched: search.searchText
+    }))
+  }, [search.searchText])
+
   useEffect(() => {
     fetchingMovies(search.searched);
-    console.log(search.movies);
   }, [search.searched])
   
 

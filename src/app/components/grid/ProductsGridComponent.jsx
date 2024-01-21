@@ -17,6 +17,12 @@ export const ProductsGridComponent = () =>  {
           </strong></p> : null
       }
 
+      
+         {!hasMovies ?  
+          <p>There's No Movies to Show</p> : null}
+        
+      
+
       {hasMovies ? (
         <ul>
           {search.movies.map((movie) => (
@@ -34,9 +40,7 @@ export const ProductsGridComponent = () =>  {
             </li>
           ))}
         </ul>
-      ) : (
-        <p>There's No Movies to Show</p>
-      )}
+      ) : null}
     </>
   );
 };
