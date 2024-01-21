@@ -4,8 +4,8 @@ STEPS FOR THIS PROJECT:
 2.- Create the entry point for React with Vite. ✅
 3.- Create the routers for "app" and "auth". ✅
 4.- Create the context for the search. ✅
-5.- Create the main components for the search.
-6.- Create the grid component for show the search.
+5.- Create the main components for the search. ✅
+6.- Create the grid component for show the search. ✅
 7.- Show a mock in the grid component.
 8.- Create the fetch for the API.
 9.- Show the elements in the grid component.
