@@ -1,0 +1,24 @@
+ul{
+    list-style: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.text-error{
+    color:red;  
+}
+
+.valid-text{
+    color: green;
+}
+
+.border-error{
+    border: 1px solid red;
+}
+
