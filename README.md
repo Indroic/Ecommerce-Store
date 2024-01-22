@@ -13,8 +13,7 @@ STEPS FOR THIS PROJECT:
 10.- Do the inputSearch work:
 10.1 - Make the inputSearch change the value when the use write. ✅
 10.2 - Show messages if the search is not valid and show it with red color.
-10.
-10.2 - Add styles for the search and the title with sass.
+10.3 - Add styles for the search and the title with sass.
 11.- Create the filters for the search.
 12.- Add all the styles for the application using sass .
 13.- Create a Cart with a context and a reducer.

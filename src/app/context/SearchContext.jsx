@@ -14,7 +14,7 @@ export const SearchProvider = ({children}) => {
         selectedCategory: [],
         selectedYear: [],
         loading: false,
-        errorSearch: null,
+        errorSearch: '',
     })
 
   return (
