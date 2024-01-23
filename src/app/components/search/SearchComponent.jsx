@@ -30,11 +30,11 @@ export const SearchComponent = () => {
         />
         <button>Search</button>
 
-        {
+       
+      </div>
+      {
           Boolean(search.errorMessage) ? <p className={Boolean(search.errorMessage) ?`text-error`: "valid-text" }>{search.errorMessage}</p> : null
         }
-      </div>
-
       <div className="search-filters">
         
         <select onChange={onInputChange} name="selectedYear" id=""

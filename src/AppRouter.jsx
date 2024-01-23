@@ -4,7 +4,9 @@ import { Routes, Route } from "react-router-dom";
 import "./main.css";
 import { AuthRoutes } from "./auth/routes/AuthRoutes";
 import { SearchProvider } from "./app/context/SearchContext";
-import '../public/src/styles/css/app.css'
+import 'animate.css';
+import '../src/styles/css/app.css'
+
 
 export const AppRouter = () => {
   return (

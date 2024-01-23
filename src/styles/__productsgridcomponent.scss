@@ -1,0 +1,42 @@
+
+.cinema-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  margin-top: 3.5rem;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.movie-card {
+  display: grid;
+  grid-template-rows: 10rem 8rem 0rem 3rem 2.5rem;
+  margin-bottom: 4rem;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: #8E2DE2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 4%;
+  picture {
+    .movie-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  h4 {
+    font-size: 1rem;
+    text-wrap: pretty;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    white-space: nowrap; /* Evita el retorno de línea */
+    text-overflow: ellipsis;
+  }
+  .favorite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
