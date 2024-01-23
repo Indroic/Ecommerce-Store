@@ -7,7 +7,8 @@ export const SearchComponent = () => {
 
   const onInputChange = ({target})=>{
     const {name, value, type} = target;
-    setSearch(prevState => ({
+/*     console.log(name, value, type)
+ */    setSearch(prevState => ({
       ...prevState,
       [name]: [value]
     }))
@@ -34,8 +35,23 @@ export const SearchComponent = () => {
         }
       </div>
 
-      <div className="Search-Filters">
+      <div className="search-filters">
         
+        <select onChange={onInputChange} name="selectedYear" id=""
+        value={search.selectedYear}
+        >
+          {
+            search.years.map(year => 
+              (<option onChange={onInputChange}  value={year} key={`${year}-${Math.random()}`}>{year[0].toUpperCase()+year.substring(1,year.length)}</option>))
+          }
+        </select>
+
+        <select onChange={onInputChange} name="selectedCategory" id="" value={search.selectedCategory}>
+          {
+            search.categories.map(category => 
+              (<option value={category} key={`${category}-${Math.random()}`} >{category[0].toUpperCase()+category.substring(1,category.length)}</option>))
+          }
+        </select>
 
       </div>
     </form>

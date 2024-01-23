@@ -26,4 +26,8 @@ ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.search-filters {
+  display: flex;
 }/*# sourceMappingURL=app.css.map */

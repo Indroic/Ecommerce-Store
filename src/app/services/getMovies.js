@@ -2,9 +2,9 @@
 export const getMovies = async(search = titanic) => {
     const URL = `${import.meta.env.VITE_ENDPOINT}?apikey=${import.meta.env.VITE_API_KEY}&s=${search}`;
     const resp = await fetch(URL);
-    const data = await resp.json();
+    const data = await resp?.json();
 
-    const movies = data.Search.map(movie=>({
+    const movies = data?.Search.map(movie=>({
         id: movie.imdbID,
         title: movie.Title,
         year: movie.Year,

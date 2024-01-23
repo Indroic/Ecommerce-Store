@@ -3,11 +3,10 @@ import { SearchComponent } from '../components/search/SearchComponent'
 import { ProductsGridComponent } from '../components/grid/ProductsGridComponent'
 import { getMovies } from '../services/getMovies'
 import { SearchContext } from '../context/SearchContext'
-/* import '../../'
- */
+import { filters } from '../filters/filters'
+
 export const LandingPage = () => {
 
-  
   const {search, setSearch} = useContext(SearchContext);
 
   const isFirstInput = useRef(true);
@@ -15,6 +14,8 @@ export const LandingPage = () => {
   const previousSearch  = useRef(search.searchText);
 
   const {searched} = search;
+
+  const {filterMovies, allCategories} = filters();
 
   const loadingMovies = (state)=>{
     setSearch(prevState => ({
@@ -34,7 +35,6 @@ export const LandingPage = () => {
 
   const fetchingMovies = async(searched = 'titanic')=>{
     try {
-       
         if(previousSearch.current.includes(search.searchText) ) return;
 
         previousSearch.current = search.searchText
@@ -42,9 +42,15 @@ export const LandingPage = () => {
 
         const newMovies = await getMovies(searched)
 
+        if(newMovies != undefined){
+          allCategories(newMovies);
+        }
+
+        const filtedMovies = filterMovies(newMovies);
+
         setSearch(prevState => ({
           ...prevState,
-          movies:newMovies
+          movies:filtedMovies
         }))
         loadingMovies(false);
     } catch (error) {
@@ -61,7 +67,6 @@ export const LandingPage = () => {
         return;
       }
       
-
       if(search.searchText.toString().trim().length <= 2) {
         return  seetingError('The search needs to be at least 2 characters long');
       }else{
@@ -82,7 +87,7 @@ export const LandingPage = () => {
 
   useEffect(() => {
     fetchingMovies(search.searched);
-  }, [search.searched])
+  }, [search.searched,  search.selectedCategory, search.selectedYear])
   
 
   return (
@@ -90,8 +95,8 @@ export const LandingPage = () => {
     <div className="container">
 
       <header className="hero">
-      <h1>Store App</h1>
-      <SearchComponent/>
+        <h1>Store App</h1>
+        <SearchComponent/>
       </header>
       
       <main>
