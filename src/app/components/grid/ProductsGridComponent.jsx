@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { SearchContext } from "../../context/SearchContext";
 /* import { Search as initialMovies } from "../../mock/cinema.json"; */
-import { BiHeartCircle } from "react-icons/bi";
+import { BiHeartCircle, BiNoEntry } from "react-icons/bi";
+import { FavsContext } from "../../context/FavsProvider";
 
 export const ProductsGridComponent = () => {
   /*
@@ -10,9 +11,7 @@ export const ProductsGridComponent = () => {
   const { search, setSearch, movies } = useContext(SearchContext);
   const hasMovies = search?.movies.length > 0;
 
-  const mouseOver = (event)=>{
-    console.log(event);
-  }
+  const {favorites, ADD_TO_FAVORITE, REMOVE_FROM_FAVORITE} = useContext(FavsContext);
 
   return (
     <>
@@ -45,9 +44,15 @@ export const ProductsGridComponent = () => {
               <p>{movie.year}</p>
 
               <div className="favorite">
-                <BiHeartCircle onMouseOver={mouseOver} className="heart-icon">
+                <BiHeartCircle className="heart-icon" onClick={()=>ADD_TO_FAVORITE(movie)}>
                   <button className="favorite-button"></button>
                 </BiHeartCircle>
+
+                <BiNoEntry className="no-entry-favorite" onClick={()=>REMOVE_FROM_FAVORITE(movie)}>
+                  <button className="remove-from-favorite">
+                  </button>
+                </BiNoEntry>
+
               </div>
             </li>
           ))}

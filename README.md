@@ -16,8 +16,8 @@ STEPS FOR THIS PROJECT:
 10.3 - Add styles for the search and the title with sass. ✅
 11.- Create the filters for the search. ✅
 11.1.- Make the filters work. ✅
-12.- Add all the styles for the application using sass.
-13.- Create a Cart with a context and a reducer.
+12.- Add all the styles for the application using sass. ✅
+13.- Create a Cart with a context and a reducer. 
 14.- Show the element in the cart in an hidden menu.
 15.- Add animations to the hidden menu.
 16.- Implement zustand with the seem Cart.

@@ -62,15 +62,25 @@ ul {
   color: $red-color;
 }
 
-.heart-icon {
+.heart-icon, 
+.no-entry-favorite
+ {
   font-size: 2rem;
   transition: font-size 30ms ease-out;
   padding: 1rem;
   transition: transform 0.3s ease-in-out;
   &:hover {
-    font-size: 3rem;
+    font-size: 2.5rem;
     cursor: pointer;
     animation: heartBeat 1s;
     color:red;
+  }
+}
+
+.no-entry-favorite{
+  transition: transform 0.3s ease-in-out;
+  &:hover{
+    font-size: 1.8rem;
+    animation: jello 1s;
   }
 }
