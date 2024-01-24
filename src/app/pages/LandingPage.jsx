@@ -99,7 +99,7 @@ export const LandingPage = () => {
 
     <main>
         <ProductsGridComponent />
-      </main>
+    </main>
   </>
   );
 };

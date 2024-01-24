@@ -29,7 +29,7 @@ export const FavsProvider = ({children}) => {
 
   return (
     <FavsContext.Provider value={{ADD_TO_FAVORITE, REMOVE_FROM_FAVORITE,CLEAN_FAVORITES, 
-    favorites: state}}>
+    favorites:state }}>
       {children}
     </FavsContext.Provider>
   )
