@@ -1,11 +1,15 @@
 import { create } from 'zustand'
 
+const initialState = JSON.parse(window.localStorage.getItem('favorites')) || []
+
 const updateFavorites = (newState) => {
   window.localStorage.setItem('favorites', JSON.stringify(newState))
 }
 
+console.log(initialState)
+
 export const useStore = create((set) => ({
-  state: [],
+  state: initialState,
   addToCart: (actionPayload) => {
     set((state) => {
       const itemInFavorite = state.findIndex(
