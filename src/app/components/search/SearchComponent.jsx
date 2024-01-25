@@ -25,20 +25,14 @@ export const SearchComponent = () => {
   };
 
   return (
-    <form className="display-search" onSubmit={onFormSubmit}>
-      <div className="search-input">
-        <input
-          className={Boolean(search.errorMessage) ? "border-error" : null}
-          type="text"
-          name="searchText"
-          id=""
-          placeholder="Avatar, Napoleon, Black Friday..."
-          onChange={onInputChange}
-          autoFocus
-        />
-        <button>Search</button>
 
-        <label className="label-favorite-cart" htmlFor={allFavoriteIcons}>
+    <>
+    
+
+    <h1 className="movie-title">Store App</h1>
+
+
+    <label className="label-favorite-cart" htmlFor={allFavoriteIcons}>
           <BiHeartCircle className="heart-icon"></BiHeartCircle>
         </label>
 
@@ -53,7 +47,7 @@ export const SearchComponent = () => {
         <div className="favorite-cart animate__animated animate__fadeIn">
           {favorites ? (
             <ul>
-              {favorites?.map((favorite, index) => (
+              {favorites?.map((favorite) => (
                 <li key={`${favorite.id}-${Math.random()}`}>
                   <h3>Favorite Movies</h3>
                   <picture>
@@ -75,6 +69,21 @@ export const SearchComponent = () => {
             <p>There's Not Favorites Yet</p>
           )}
         </div>
+    
+    
+        <form className="display-search" onSubmit={onFormSubmit}>
+      <div className="search-input">
+        <input
+          className={Boolean(search.errorMessage) ? "border-error" : null}
+          type="text"
+          name="searchText"
+          id=""
+          placeholder="Avatar, Napoleon, Black Friday..."
+          onChange={onInputChange}
+          autoFocus
+        />
+        <button>Search</button>
+
       </div>
       {Boolean(search.errorMessage) ? (
         <p
@@ -121,6 +130,7 @@ export const SearchComponent = () => {
           </select>
         </div>
       </div>
-    </form>
+        </form>
+    </>
   );
 };

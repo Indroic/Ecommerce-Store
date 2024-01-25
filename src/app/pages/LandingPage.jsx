@@ -91,7 +91,6 @@ export const LandingPage = () => {
   
     <div className="container">
       <header className="hero">
-        <h1 className="movie-title">Store App</h1>
         <SearchComponent />
       </header>
       

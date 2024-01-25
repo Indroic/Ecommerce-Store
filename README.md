@@ -18,7 +18,10 @@ STEPS FOR THIS PROJECT:
 11.1.- Make the filters work. ✅
 12.- Add all the styles for the application using sass. ✅
 13.- Create a Cart with a context and a reducer. ✅
-14.- Show the element in the cart in an hidden menu.
-15.- Add animations to the hidden menu.
+14.- Show the element in the cart in an hidden menu. ✅
+15.- Add animations to the hidden menu. ✅
 16.- Implement zustand with the seem Cart.
 17.- Create a register and LoginPage.
+18.- Create routes for the items in the grid.
+19.- Create an button for order the movies for sort or 
+20.- Create an footer with the copyrights.

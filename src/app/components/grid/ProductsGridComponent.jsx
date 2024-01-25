@@ -3,10 +3,13 @@ import { SearchContext } from "../../context/SearchContext";
 /* import { Search as initialMovies } from "../../mock/cinema.json"; */
 import { BiHeartCircle, BiNoEntry } from "react-icons/bi";
 import { FavsContext } from "../../context/FavsProvider";
+import { useStore } from "../../store/FavoritesStore";
 
 export const ProductsGridComponent = () => {
   /*
   const [movies, setMovies] = useState(initialMovies); */
+
+  const addToCart = useStore(state => state.addToCart);
 
   const { search, setSearch, movies } = useContext(SearchContext);
   const hasMovies = search?.movies.length > 0;
@@ -44,7 +47,7 @@ export const ProductsGridComponent = () => {
               <p>{movie.year}</p>
 
               <div className="favorite">
-                <BiHeartCircle className="heart-icon" onClick={()=>ADD_TO_FAVORITE(movie)}>
+                <BiHeartCircle className="heart-icon" onClick={()=>addToCart(movie)}>
                   <button className="favorite-button"></button>
                 </BiHeartCircle>
 

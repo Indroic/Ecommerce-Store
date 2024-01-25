@@ -12,8 +12,6 @@ export const favoriteReducer = (state, action) => {
       (movie) => movie.id === actionPayload.id
     );
 
-    console.log(itemInFavorite);
-
     if (itemInFavorite != -1) {
       return state;
     }

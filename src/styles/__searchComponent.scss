@@ -16,35 +16,38 @@
         display: flex;
     }
     
-    .favorite-cart{
-        display:none;
+}
+.favorite-cart{
+    display:none;
+}
+.checkbox-favorite-cart{
+    display:none;
+}
+.label-favorite-cart{
+    position: absolute;
+    right: 0;
+    top: 7dvw;
+    .heart-icon{
+        align-self: flex-end;
     }
-    .checkbox-favorite-cart{
-        display:none;
-    }
-    .label-favorite-cart{
-        .heart-icon{
-            align-self: flex-end;
-        }
-    }
-    .label-favorite-cart ~ .checkbox-favorite-cart:checked ~ .favorite-cart{
-        display:block;
-        background-color: $primary-background-color;
-        width: 40dvw;
-        position: absolute;
-        right:0;
-        top:36dvh;
-        z-index: 10;
-        border-radius: 2%;
-        box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.247);
+}
+.label-favorite-cart ~ .checkbox-favorite-cart:checked ~ .favorite-cart{
+    display:block;
+    background-color: $primary-background-color;
+    width: 40dvw;
+    position: absolute;
+    right:0;
+    top:20dvh;
+    z-index: 10;
+    border-radius: 2%;
+    box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.247);
 
-        @include min-width-change(600px){
-            max-width: 25dvw;
-            background-color: red;
-            right: 1dvw;
-        }
-
+    @include min-width-change(600px){
+        max-width: 25dvw;
+        background-color: red;
+        right: 1dvw;
     }
+
 }
 
 
