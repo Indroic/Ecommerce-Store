@@ -1,18 +1,26 @@
 import { create } from 'zustand'
 
-const initialState = JSON.parse(window.localStorage.getItem('favorites')) || []
-
 const updateFavorites = (newState) => {
   window.localStorage.setItem('favorites', JSON.stringify(newState))
 }
 
-console.log(initialState)
+// funcion poara obtener el estado inicial
+const getInitalState = () => {
+  const initialState = JSON.parse(window.localStorage.getItem('favorites')) || []
+  return initialState
+}
 
 export const useStore = create((set) => ({
-  state: initialState,
+  state: getInitalState(),
   addToCart: (actionPayload) => {
     set((state) => {
-      const itemInFavorite = state.findIndex(
+      // se obtiene el estado inicial
+      const initialState = getInitalState()
+
+      console.log('initialState', initialState)
+
+      // si el elemento ya existe no lo agrega
+      const itemInFavorite = initialState.findIndex(
         (movie) => movie.id === actionPayload.id
       )
 
@@ -21,8 +29,12 @@ export const useStore = create((set) => ({
         return { state }
       }
 
-      const newState = [...state, { ...actionPayload }]
+      // si el elemento no existe lo agrega
+      const newState = [...initialState, { ...actionPayload }]
 
+      console.log('newState', newState)
+
+      // actualiza el valor local
       updateFavorites(newState)
 
       return { state: newState }
