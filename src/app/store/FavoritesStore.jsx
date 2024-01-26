@@ -14,13 +14,13 @@ export const useStore = create((set) => ({
   state: getInitalState(),
   addToCart: (movieToAdd) => {
     set((state) => {
-      // se obtiene el estado inicial
-      const initialState = getInitalState()
+      console.log('state', state)
 
-      console.log('initialState', initialState)
+      // se obtiene el estado inicial
+      console.log('initialState', state.state)
 
       // si el elemento ya existe no lo agrega
-      const itemInFavorite = initialState.findIndex(
+      const itemInFavorite = state.state.findIndex(
         (movie) => movie.id === movieToAdd.id
       )
 
@@ -30,7 +30,7 @@ export const useStore = create((set) => ({
       }
 
       // si el elemento no existe lo agrega
-      const newState = [...initialState, { ...movieToAdd }]
+      const newState = [...state.state, { ...movieToAdd }]
 
       console.log('newState', newState)
 
